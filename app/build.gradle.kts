@@ -5,8 +5,6 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("kapt")
-    id("com.google.gms.google-services")
-    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -90,11 +88,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
 
     implementation("com.google.android.material:material:1.4.0")
-
-    // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:26.3.0"))
-    implementation("com.google.firebase:firebase-crashlytics-ktx")
-    implementation("com.google.firebase:firebase-analytics-ktx")
 
     debugImplementation("com.squareup.leakcanary:leakcanary-android:2.7")
 
