@@ -84,7 +84,7 @@ dependencies {
     implementation("androidx.core:core-ktx:1.6.0")
     implementation("androidx.appcompat:appcompat:1.3.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.0")
-    implementation("androidx.fragment:fragment-ktx:1.3.6")
+    implementation("androidx.fragment:fragment-ktx:1.4.0-alpha06")
 
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
@@ -95,6 +95,8 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:26.3.0"))
     implementation("com.google.firebase:firebase-crashlytics-ktx")
     implementation("com.google.firebase:firebase-analytics-ktx")
+
+    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.7")
 
     // Test
     testImplementation("junit:junit:4.13.2")
