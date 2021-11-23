@@ -5,6 +5,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -12,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.tatsuro.app.androidsampleapplication2021"
-        minSdk = 21
+        minSdk = 26
         targetSdk = 31
         versionCode = 1
         versionName = "1.0"
@@ -74,19 +75,32 @@ android {
     buildFeatures {
         dataBinding = true
     }
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
 
     // AndroidX
-    implementation("androidx.core:core-ktx:1.6.0")
-    implementation("androidx.appcompat:appcompat:1.3.1")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.0")
-    implementation("androidx.fragment:fragment-ktx:1.4.0-alpha07")
+    implementation("androidx.core:core-ktx:1.7.0")
+    implementation("androidx.appcompat:appcompat:1.4.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.1")
+    implementation("androidx.fragment:fragment-ktx:1.4.0")
 
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
 
     implementation("com.google.android.material:material:1.4.0")
+
+    // Hilt Android
+    implementation("com.google.dagger:hilt-android:2.40.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.40.1")
+
+    // Hilt ViewModel
+    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+
+    // Hilt Compiler
+    kapt("androidx.hilt:hilt-compiler:1.0.0")
 
     debugImplementation("com.squareup.leakcanary:leakcanary-android:2.7")
 

@@ -2,10 +2,11 @@ package com.tatsuro.app.androidsampleapplication2021
 
 import android.app.Application
 import android.os.StrictMode
-import androidx.fragment.app.strictmode.FragmentStrictMode
+import dagger.hilt.android.HiltAndroidApp
 
 @Suppress("unused")
-class DebugApplication : Application() {
+@HiltAndroidApp
+class DebugApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
@@ -27,16 +28,5 @@ class DebugApplication : Application() {
             .penaltyLog()
             .build()
         StrictMode.setVmPolicy(vmPolicy)
-
-        val fragmentPolicy = FragmentStrictMode.Policy.Builder()
-            .detectFragmentReuse()
-            .detectFragmentTagUsage()
-            .detectRetainInstanceUsage()
-            .detectSetUserVisibleHint()
-            .detectTargetFragmentUsage()
-            .detectWrongFragmentContainer()
-            .penaltyLog()
-            .build()
-        FragmentStrictMode.setDefaultPolicy(fragmentPolicy)
     }
 }

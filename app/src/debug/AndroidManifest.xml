@@ -3,7 +3,7 @@
     package="com.tatsuro.app.androidsampleapplication2021">
 
     <application
-        android:name=".DebugApplication"
+        android:name=".DebugApp"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher" />
 
